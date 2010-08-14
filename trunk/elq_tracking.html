@@ -1,0 +1,52 @@
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script src="elq_tracking-0.1.js"></script>
+	<script type="text/javascript">
+		//The page tracking can be called as shown below, where *siteid* is substituted for your eloqua org's siteid.
+		var elqTracker = new jQuery.elq(*siteid*);
+		elqTracker.pageTrack({success: function() {
+			console.log("this is the first callback");
+			elqTracker.getGUID(function(guid) {
+				console.log("guid gotten: " + guid);
+			});
+		}});
+		jQuery(document).ready(function() {
+			//Replace *siteid* with your org's siteid
+			jQuery("a").elqTrack(*siteid*);
+			
+			jQuery("#track_form").submit(function() {
+				jQuery("#track_status").html("Tracking: " + $("#content").val());
+				var to_track = $("#content").val();
+				elqTracker.pageTrack({url: to_track, success: function() {
+					jQuery("#track_status").html("Tracking Complete");
+				}});
+				return false;
+			});
+		});
+	</script>
+	<style type="text/css">
+		* {margin: 0; padding: 0}
+		body {font-family: arial, helvetica; font-size: 14px;}
+	</style>
+</head>
+
+<body>
+	<p>This is a test page.</p>
+	<ul>
+		<li>This is a link to <a href="http://www.google.com">Google</a></li>
+		<li>This is a link to <a href="http://www.reddit.com">Reddit</a></li>
+		<li>This is a link to <a href="http://www.yahoo.com">Yahoo</a></li>
+	</ul>
+	
+	<p>
+		<form id="track_form">
+			<input type="text" name="content" id="content" />
+			<input type="submit" value="Track" />
+		</form>
+	</p>
+	<p id="track_status"></p>
+</body>
+
+</html>
