@@ -69,7 +69,7 @@ $.elq = function(siteid) {
 	this.pageTrack = function(options) {
 		settings = $.extend({
 			url: "",
-			success: "",
+			success: ""
 		}, options);
 	
 		var ref2 = document.referrer != "" ? document.referrer : "elqNone";
@@ -148,7 +148,7 @@ $.elq = function(siteid) {
 		settings = $.extend({
 			key: "",
 			lookup: "",
-			success: "",
+			success: ""
 		}, options);
 		
 		if(settings.key != "") {
@@ -173,7 +173,7 @@ $.elq = function(siteid) {
 	this.redirect = function(options) {
 		settings = $.extend({
 			url: "",
-			elq: "",
+			elq: ""
 		}, options);
 		
 		if(settings.url == "") return false;
