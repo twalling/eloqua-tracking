@@ -39,3 +39,4 @@ elqTracker is as usual assumed to be an already instantiated jQuery.elq object. 
 Other Pages:
   * [PageTracking]
   * [EloquaGUID]
+  * [DataLookups]
