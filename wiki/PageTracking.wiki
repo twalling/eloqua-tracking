@@ -29,4 +29,4 @@ This code has instantiated the tracking object, but we have not yet used it to d
 
 We have reviewed adding simple page tracking using eloqua-tracking, but there are a few more options you may need to use that eloqua-tracking can help with:
 
-  *[EloquaGUID]
+  * [EloquaGUID]
