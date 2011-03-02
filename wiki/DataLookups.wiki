@@ -35,14 +35,13 @@ elqTracker.getData({ key: "{…}", lookup: "", success: function() {
 		var email = GetElqContentPersonalizationValue("V_ElqEmailAddress");
 		if (email != "") {
 			elqTracker.getData({ key: "{…}", lookup: "<C_EmailAddress>" + email + "</C_EmailAddress>", success: function() {
-			if (typeof GetElqContentPersonalizationValue == “function”) {
-				//do all the prepopulation stuff        
-			}
-		});
-            }
+				if (typeof GetElqContentPersonalizationValue == “function”) {
+					//do all the prepopulation stuff        
+				}
+			}});
 		}
 	}
-});
+}});
 }}}
 
 Here a visitor data lookup would be checked, followed by a contact data lookup if an email address could be pulled from the visitor record associated with a user's eloqua cookie.
