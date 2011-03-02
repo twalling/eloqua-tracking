@@ -35,7 +35,7 @@ elqTracker.getData({ key: "{…}", lookup: "", success: function() {
 		var email = GetElqContentPersonalizationValue("V_ElqEmailAddress");
 		if (email != "") {
 			elqTracker.getData({ key: "{…}", lookup: "<C_EmailAddress>" + email + "</C_EmailAddress>", success: function() {
-				if (typeof GetElqContentPersonalizationValue == “function”) {
+				if (typeof GetElqContentPersonalizationValue == "function") {
 					//do all the prepopulation stuff        
 				}
 			}});
