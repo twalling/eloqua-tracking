@@ -22,6 +22,31 @@ To call the getData() function you can use the following lines of code:
         }});
 }}}
 
+= Cookie Lookup =
+
+The general structure of a lookup to a visitor record using the eloqua cookie guid would look like"
+
+{{{
+var elqTracker = new jQuery.elq(123);
+//first do the visitor lookup
+elqTracker.getData({ key: "{…}", lookup: "", success: function() {
+	//then check for an email address on the visitor record and do a contact data lookup if there is one
+	if (typeof GetElqContentPersonalizationValue == "function") {
+		var email = GetElqContentPersonalizationValue("V_ElqEmailAddress");
+		if (email != "") {
+			elqTracker.getData({ key: "{…}", lookup: "<C_EmailAddress>" + email + "</C_EmailAddress>", success: function() {
+			if (typeof GetElqContentPersonalizationValue == “function”) {
+				//do all the prepopulation stuff        
+			}
+		});
+            }
+		}
+	}
+});
+}}}
+
+Here a visitor data lookup would be checked, followed by a contact data lookup if an email address could be pulled from the visitor record associated with a user's eloqua cookie.
+
 Other Pages:
   * [PageTracking]
   * [EloquaGUID]
