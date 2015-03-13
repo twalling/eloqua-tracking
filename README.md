@@ -1,6 +1,6 @@
 **Note: I exported this repo from it's original home at [https://code.google.com/p/eloqua-tracking/](https://code.google.com/p/eloqua-tracking/) since Google Code is going to be shut down. I'm not the original author.**
 
-See the [Wiki](wiki) for more documentation.
+See the [Wiki](https://github.com/twalling/eloqua-tracking/wiki) for more documentation.
 
 This project aims to provide an easy to use javascript library for implementing eloqua tracking on websites.
 
